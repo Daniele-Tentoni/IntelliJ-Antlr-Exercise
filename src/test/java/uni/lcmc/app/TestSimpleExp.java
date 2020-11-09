@@ -7,6 +7,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
+import static org.junit.Assert.assertEquals;
+
 public class TestSimpleExp {
     private final String file = "strings.txt";
 
@@ -26,6 +28,8 @@ public class TestSimpleExp {
         log("Prog");
         log("Lexical errors: " + lexer.lexicalErrors);
         log("Syntax errors: " + parser.getNumberOfSyntaxErrors());
+        assertEquals(0, lexer.lexicalErrors);
+        assertEquals(0, parser.getNumberOfSyntaxErrors());
     }
 
     private void log(String msg) {
