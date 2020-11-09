@@ -1,4 +1,4 @@
-package uni.lcmc.app;
+package lcmc;
 
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
@@ -10,19 +10,19 @@ import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 
 public class TestSimpleExp {
-    private final String file = "strings.txt";
 
     @Test
     public void testSimpleExpLexer() {
         CharStream chars = null;
         try {
-            chars = CharStreams.fromFileName(file);
+            String strings = "strings.txt";
+            chars = CharStreams.fromFileName(strings);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        uni.lcmc.app.SimpleExpLexer lexer = new uni.lcmc.app.SimpleExpLexer(chars);
+        lcmc.SimpleExpLexer lexer = new lcmc.SimpleExpLexer(chars);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
-        uni.lcmc.app.SimpleExpParser parser = new uni.lcmc.app.SimpleExpParser(tokens);
+        lcmc.SimpleExpParser parser = new lcmc.SimpleExpParser(tokens);
         parser.prog();
 
         log("Prog");

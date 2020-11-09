@@ -1,7 +1,7 @@
 grammar SimpleExp;
 
 @header {
-package uni.lcmc.app;
+package lcmc;
 }
 
 @lexer::members {

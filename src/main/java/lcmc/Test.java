@@ -1,4 +1,4 @@
-package uni.lcmc.app;
+package lcmc;
 
 import org.antlr.v4.runtime.*;
 
@@ -11,9 +11,9 @@ public class Test {
         log("Avvio del programma di test");
         try {
             CharStream chars = CharStreams.fromFileName(file);
-            uni.lcmc.app.SimpleExpLexer lexer = new uni.lcmc.app.SimpleExpLexer(chars);
+            lcmc.SimpleExpLexer lexer = new lcmc.SimpleExpLexer(chars);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
-            uni.lcmc.app.SimpleExpParser parser = new uni.lcmc.app.SimpleExpParser(tokens);
+            lcmc.SimpleExpParser parser = new lcmc.SimpleExpParser(tokens);
             parser.prog();
 
             log("Prog");
